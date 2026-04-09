@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le portfolio de Leanne</title>
+  <style>
+    @font-face {
+      font-family: 'Myfont';
+      src: url('../contenu pages/Myfont-Regular (2).otf') format('opentype');
+      font-display: swap;
+    }
+
+    :root {
+      --pink: #f03d95;
+      --cream: #ffe7d4;
+      --text: #121212;
+      --card: #f7a8cf;
+      --card-top: #f03d95;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--cream);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      background: var(--cream);
+    }
+
+    .hero {
+      position: relative;
+      min-height: clamp(320px, 42vw, 430px);
+      padding: clamp(16px, 2.5vw, 28px) 0 0;
+      background: var(--pink);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .hero-inner {
+      position: relative;
+      width: min(92vw, 760px);
+      height: clamp(300px, 38vw, 360px);
+    }
+
+    .brand-script {
+      position: absolute;
+      left: clamp(10px, 1.5vw, 20px);
+      top: clamp(6px, 1vw, 14px);
+      font-family: 'Myfont', cursive;
+      font-size: clamp(40px, 4.2vw, 50px);
+      line-height: 1;
+      color: #000;
+      transform: rotate(-4deg);
+    }
+
+    .brand-script--de {
+      left: clamp(8px, 1vw, 18px);
+      top: clamp(166px, 22vw, 198px);
+    }
+
+    .brand-title {
+      margin: clamp(42px, 5vw, 56px) 0 0;
+      font-family: 'Myfont', cursive;
+      font-size: clamp(66px, 9.4vw, 124px);
+      line-height: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fef0d9;
+      text-align: left;
+      word-spacing: -12px;
+    }
+
+    .brand-title .line2 {
+      display: block;
+      margin-left: clamp(140px, 18vw, 182px);
+      margin-top: clamp(4px, 1vw, 12px);
+    }
+
+    .subtitle {
+      position: absolute;
+      left: clamp(190px, 26vw, 252px);
+      top: clamp(244px, 32vw, 292px);
+      font-family: 'Myfont', cursive;
+      font-size: clamp(28px, 3.8vw, 48px);
+      color: #000;
+      white-space: nowrap;
+      transform: rotate(-3deg);
+    }
+
+    .nav-grid {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      padding: clamp(18px, 3vw, 28px) clamp(20px, 5vw, 72px) clamp(28px, 4vw, 40px);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: clamp(18px, 2.4vw, 34px) clamp(12px, 2vw, 26px);
+      align-items: start;
+    }
+
+    .nav-card {
+      text-decoration: none;
+      color: inherit;
+      display: grid;
+      justify-items: center;
+      gap: 14px;
+    }
+
+    .icon-wrap {
+      width: 114px;
+      height: 96px;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    
+
+    .icons {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center top;
+      transform: translateY(-2px);
+    }
+
+    .nav-card:nth-child(1) .icons {
+      width: 92px;
+      transform: translateY(-6px);
+    }
+
+    .nav-card:nth-child(2) .icons {
+      width: 106px;
+    }
+
+    .nav-card:nth-child(3) .icons {
+      width: 108px;
+    }
+
+    .nav-card:nth-child(4) .icons {
+      width: 110px;
+    }
+
+    .nav-card:nth-child(5) .icons {
+      width: 102px;
+    }
+
+    .nav-card:nth-child(6) .icons {
+      width: 104px;
+    }
+
+    .nav-card:nth-child(7) .icons {
+      width: 104px;
+    }
+
+    .label {
+      text-align: center;
+      font-family: 'Myfont', cursive;
+      letter-spacing: -3px;
+      word-spacing: 6px;
+      font-size: clamp(16px, 1.8vw, 20px);
+      line-height: 1.15;
+      max-width: 145px;
+    }
+
+    .nav-grid .nav-card:nth-child(4) .label,
+    .nav-grid .nav-card:nth-child(6) .label,
+    .nav-grid .nav-card:nth-child(7) .label {
+      max-width: 150px;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        min-height: 332px;
+        padding: 12px 0 0;
+      }
+
+      .hero-inner {
+        width: min(96vw, 420px);
+        height: 300px;
+      }
+
+      .brand-script {
+        left: 4px;
+        top: 8px;
+        font-size: 34px;
+      }
+
+      .brand-title {
+        font-size: clamp(52px, 15vw, 84px);
+        margin-top: 54px;
+      }
+
+      .brand-title .line2 {
+        margin-left: 74px;
+      }
+
+      .brand-script--de {
+        left: 2px;
+        top: 166px;
+      }
+
+      .subtitle {
+        left: 112px;
+        top: 236px;
+        font-size: 26px;
+      }
+
+      .nav-grid {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 18px 18px 24px;
+        gap: 20px 14px;
+      }
+
+      .label {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-label="Présentation du portfolio">
+      <div class="hero-inner">
+        <div class="brand-script">le</div>
+        <h1 class="brand-title">
+          PORTFOLIO
+          <span class="line2">LEANNE</span>
+        </h1>
+        <div class="brand-script brand-script--de">de</div>
+        <div class="subtitle">développeuse web</div>
+      </div>
+    </section>
+
+    <section class="nav-grid" aria-label="Navigation principale">
+      <a class="nav-card" href="apropos.html">
+        <div class="icon-wrap">
+          <div class="folder"></div>
+          <img class="icons" src="https://github.com/leannebasin/portfolio/blob/4a7bacc54b0d396b6d7a2053c5f991d7274ccca1/hopmail.png" alt="À propos de moi">
+        </div>
+        <div class="label">à propos de moi</div>
+      </a>
+
+      <a class="nav-card" href="compétences.html">
+        <div class="icon-wrap">
+          <div class="folder"></div>
+          <img class="icons" src="../contenu pages/accueil/compétences.png" alt="Mes compétences">
+        </div>
+        <div class="label">mes compétences</div>
+      </a>
+
+      <a class="nav-card" href="experiencepro.html">
+        <div class="icon-wrap">
+          <div class="folder"></div>
+          <img class="icons" src="../contenu pages/accueil/experiencepro.png" alt="Mes expériences professionnelles">
+        </div>
+        <div class="label">mes expériences professionnelles</div>
+      </a>
+
+      <a class="nav-card" href="projetpro.html">
+        <div class="icon-wrap">
+          <div class="folder"></div>
+          <img class="icons" src="../contenu pages/accueil/projetpro.png" alt="Mes projets professionnels">
+        </div>
+        <div class="label">mes projets professionnels</div>
+      </a>
+
+      <a class="nav-card" href="projetperso.html">
+        <div class="icon-wrap">
+          <div class="folder"></div>
+          <img class="icons" src="../contenu pages/accueil/projetperso.png" alt="Mes projets personnels">
+        </div>
+        <div class="label">mes projets personnels</div>
+      </a>
+
+      <a class="nav-card" href="CV.html">
+        <div class="icon-wrap">
+          <div class="folder"></div>
+          <img class="icons" src="../contenu pages/accueil/CV.png" alt="Mon CV">
+        </div>
+        <div class="label">mon cv</div>
+      </a>
+
+      <a class="nav-card" href="contact.html">
+        <div class="icon-wrap">
+          <div class="folder"></div>
+          <img class="icons" src="../contenu pages/accueil/icone-contact.png" alt="Contact">
+        </div>
+        <div class="label">contact</div>
+      </a>
+    </section>
+  </main>
+</body>
+</html>
